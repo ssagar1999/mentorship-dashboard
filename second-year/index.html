@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Second-year cohort dashboard — 26 members</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#f6f7f9; --panel:#fff; --ink:#111827; --muted:#6b7280; --line:#e5e7eb;
+  --radius:14px; --shadow:0 1px 2px rgba(16,24,40,.04),0 8px 24px -12px rgba(16,24,40,.18);
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0b0d10;--panel:#14171c;--ink:#e9ecf1;--muted:#9aa3af;--line:#242a33;
+         --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7)}
+}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2{margin:0;line-height:1.22;letter-spacing:-.02em}
+h1{font-size:clamp(24px,3.2vw,36px)}
+h2{font-size:19px}
+.wrap{max-width:1180px;margin:0 auto;padding:32px 20px 64px}
+.top{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between;
+  margin-bottom:8px}
+.muted{color:var(--muted)}
+.crumb{font-size:13px}
+.crumb a{text-decoration:none;border-bottom:1px solid var(--line)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;box-shadow:var(--shadow)}
+.kpi-v{font-size:28px;font-weight:650;letter-spacing:-.02em}
+.kpi-l{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.kpi-s{font-size:12px;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
+.leg{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;
+  background:var(--panel);border:1px solid var(--line);font-size:13px;text-decoration:none}
+.leg i{width:9px;height:9px;border-radius:50%}
+.leg b{font-variant-numeric:tabular-nums}
+section{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:20px;margin-bottom:24px;overflow:hidden}
+.head{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
+  margin-bottom:14px}
+input[type=search]{font:inherit;padding:8px 12px;border-radius:10px;
+  border:1px solid var(--line);background:var(--bg);color:var(--ink);min-width:220px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);
+  font-weight:600;white-space:nowrap}
+tbody tr:hover{background:color-mix(in srgb,var(--ink) 4%,transparent)}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.who a{font-weight:600;text-decoration:none}
+.login{display:block;color:var(--muted);font-size:12px}
+.role{display:block;color:var(--muted);font-size:11.5px;font-style:italic}
+.rank{color:var(--muted);font-variant-numeric:tabular-nums}
+.grade{display:inline-block;width:22px;height:22px;line-height:22px;text-align:center;
+  border-radius:7px;font-weight:700;font-size:12px}
+.gA{background:#d1fae5;color:#065f46} .gB{background:#dbeafe;color:#1e40af}
+.gC{background:#fef3c7;color:#92400e} .gD{background:#e5e7eb;color:#374151}
+@media (prefers-color-scheme:dark){
+  .gA{background:#064e3b;color:#a7f3d0} .gB{background:#1e3a8a;color:#bfdbfe}
+  .gC{background:#78350f;color:#fde68a} .gD{background:#374151;color:#d1d5db}
+}
+.pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;white-space:nowrap;
+  color:var(--c);border:1px solid color-mix(in srgb,var(--c) 45%,transparent);
+  background:color-mix(in srgb,var(--c) 12%,transparent)}
+.action{color:var(--muted);font-size:12.5px;min-width:220px}
+.table-scroll{overflow-x:auto;margin:0 -20px -20px;padding:0 20px 20px}
+.hint{font-size:12.5px;color:var(--muted)}
+@media (max-width:720px){td.action,.action-col{display:none}}
+</style>
+</head><body>
+<div class="wrap">
+
+<div class="crumb muted"><a href="../">← First-year dashboard (142 students)</a></div>
+<div class="top">
+  <div>
+    <h1>Second-year cohort dashboard</h1>
+    <p class="muted">DevForge club · 26 members · PR data refreshed 2026-11-17 12:11</p>
+  </div>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><div class="kpi-v">26</div><div class="kpi-l">Members</div></div>
+  <div class="kpi"><div class="kpi-v">1,225</div><div class="kpi-l">PRs tracked</div></div>
+  <div class="kpi"><div class="kpi-v">770</div><div class="kpi-l">Merged</div></div>
+  <div class="kpi"><div class="kpi-v">195</div><div class="kpi-l">Open</div></div>
+  <div class="kpi"><div class="kpi-v">260</div><div class="kpi-l">Closed unmerged</div></div>
+  <div class="kpi"><div class="kpi-v">304</div><div class="kpi-l">Quality merges</div><div class="kpi-s">in repos over the bar</div></div>
+  <div class="kpi"><div class="kpi-v">173</div><div class="kpi-l">GSoC-org merges</div></div>
+</div>
+
+<div class="legend"><a class="leg" href="#members" data-filter="on_track"><i style="background:#059669"></i>On track <b>10</b></a><a class="leg" href="#members" data-filter="promising"><i style="background:#0284c7"></i>Nearly there <b>8</b></a><a class="leg" href="#members" data-filter="needs_signal"><i style="background:#d97706"></i>Needs external signal <b>5</b></a><a class="leg" href="#members" data-filter="not_yet"><i style="background:#7c3aed"></i>Not yet <b>1</b></a><a class="leg" href="#members" data-filter="no_evidence"><i style="background:#6b7280"></i>No evidence <b>2</b></a></div>
+
+<section>
+  <div class="head"><h2>GSoC shortlist</h2>
+    <span class="hint">Scored on quality merges, GSoC-org work, org spread and readiness.</span></div>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>#</th><th>Member</th><th class="num">Score</th><th class="num">Quality</th>
+      <th class="num">GSoC merges</th><th class="num">Merged</th><th>Readiness</th></tr></thead>
+    <tbody>
+<tr><td class="rank">1</td><td class="who"><a href="https://github.com/geetxnshgoyal" target="_blank" rel="noopener">Geetansh Goyal</a><span class="login">@geetxnshgoyal</span></td><td class="num">1984</td><td class="num">54</td><td class="num">54</td><td class="num">146</td><td><span class="pill" style="--c:#059669">On track</span></td></tr>
+<tr><td class="rank">2</td><td class="who"><a href="https://github.com/Dotify71" target="_blank" rel="noopener">Dushyant Acharya</a><span class="login">@Dotify71</span></td><td class="num">1444</td><td class="num">50</td><td class="num">22</td><td class="num">86</td><td><span class="pill" style="--c:#059669">On track</span></td></tr>
+<tr><td class="rank">3</td><td class="who"><a href="https://github.com/nishtha-agarwal-211" target="_blank" rel="noopener">Nishtha Agarwal</a><span class="login">@nishtha-agarwal-211</span></td><td class="num">1430</td><td class="num">59</td><td class="num">3</td><td class="num">164</td><td><span class="pill" style="--c:#059669">On track</span></td></tr>
+<tr><td class="rank">4</td><td class="who"><a href="https://github.com/sahitya0xsingh" target="_blank" rel="noopener">Sahitya Singh</a><span class="login">@sahitya0xsingh</span></td><td class="num">1332</td><td class="num">44</td><td class="num">24</td><td class="num">98</td><td><span class="pill" style="--c:#059669">On track</span></td></tr>
+<tr><td class="rank">5</td><td class="who"><a href="https://github.com/pranavchoudhary-tech" target="_blank" rel="noopener">Pranav Choudhary</a><span class="login">@pranavchoudhary-tech</span></td><td class="num">787</td><td class="num">22</td><td class="num">17</td><td class="num">49</td><td><span class="pill" style="--c:#059669">On track</span></td></tr>
+<tr><td class="rank">6</td><td class="who"><a href="https://github.com/dhiraj-143r" target="_blank" rel="noopener">Dhiraj Rathod</a><span class="login">@dhiraj-143r</span></td><td class="num">702</td><td class="num">18</td><td class="num">22</td><td class="num">28</td><td><span class="pill" style="--c:#059669">On track</span></td></tr>
+<tr><td class="rank">7</td><td class="who"><a href="https://github.com/dhhhhruv" target="_blank" rel="noopener">Dhruv Mehta</a><span class="login">@dhhhhruv</span></td><td class="num">426</td><td class="num">17</td><td class="num">2</td><td class="num">20</td><td><span class="pill" style="--c:#059669">On track</span></td></tr>
+<tr><td class="rank">8</td><td class="who"><a href="https://github.com/sharmavikas18" target="_blank" rel="noopener">Vikas Sharma</a><span class="login">@sharmavikas18</span></td><td class="num">394</td><td class="num">10</td><td class="num">10</td><td class="num">16</td><td><span class="pill" style="--c:#059669">On track</span></td></tr>
+<tr><td class="rank">9</td><td class="who"><a href="https://github.com/Sahitya0805" target="_blank" rel="noopener">Sahitya Singh</a><span class="login">@Sahitya0805</span></td><td class="num">347</td><td class="num">9</td><td class="num">4</td><td class="num">29</td><td><span class="pill" style="--c:#059669">On track</span></td></tr>
+<tr><td class="rank">10</td><td class="who"><a href="https://github.com/nithyarajmudhaliyar" target="_blank" rel="noopener">Nithyaraj</a><span class="login">@nithyarajmudhaliyar</span></td><td class="num">324</td><td class="num">8</td><td class="num">8</td><td class="num">18</td><td><span class="pill" style="--c:#059669">On track</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="members">
+  <div class="head"><h2>All members</h2>
+    <input type="search" id="q" placeholder="Filter by name, handle or role…" autocomplete="off"></div>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Member</th><th class="num">PRs</th><th class="num">Merged</th>
+      <th class="num">Open</th><th class="num">Closed</th><th class="num">Quality</th>
+      <th class="num">GSoC</th><th class="num">Orgs</th><th>Grade</th><th>Readiness</th>
+      <th class="num">Score</th><th class="action-col">What they need</th></tr></thead>
+    <tbody id="rows">
+<tr><td class="who"><a href="https://github.com/nishtha-agarwal-211" target="_blank" rel="noopener">Nishtha Agarwal</a><span class="login">@nishtha-agarwal-211</span><span class="role">Membership Lead</span></td><td class="num">195</td><td class="num">164</td><td class="num">11</td><td class="num">20</td><td class="num">59</td><td class="num">3</td><td class="num">25</td><td><span class="grade gA">A</span></td><td><span class="pill" style="--c:#059669">On track</span></td><td class="num">1430</td><td class="action">Shortlist: agree the target org, ask for a scoped issue, and set a proposal deadline.</td></tr>
+<tr><td class="who"><a href="https://github.com/geetxnshgoyal" target="_blank" rel="noopener">Geetansh Goyal</a><span class="login">@geetxnshgoyal</span><span class="role">Club President</span></td><td class="num">187</td><td class="num">146</td><td class="num">20</td><td class="num">21</td><td class="num">54</td><td class="num">54</td><td class="num">18</td><td><span class="grade gA">A</span></td><td><span class="pill" style="--c:#059669">On track</span></td><td class="num">1984</td><td class="action">Shortlist: agree the target org, ask for a scoped issue, and set a proposal deadline.</td></tr>
+<tr><td class="who"><a href="https://github.com/Dotify71" target="_blank" rel="noopener">Dushyant Acharya</a><span class="login">@Dotify71</span><span class="role">Member</span></td><td class="num">188</td><td class="num">86</td><td class="num">58</td><td class="num">44</td><td class="num">50</td><td class="num">22</td><td class="num">29</td><td><span class="grade gA">A</span></td><td><span class="pill" style="--c:#059669">On track</span></td><td class="num">1444</td><td class="action">Shortlist: agree the target org, ask for a scoped issue, and set a proposal deadline.</td></tr>
+<tr><td class="who"><a href="https://github.com/sahitya0xsingh" target="_blank" rel="noopener">Sahitya Singh</a><span class="login">@sahitya0xsingh</span><span class="role">Designer</span></td><td class="num">115</td><td class="num">98</td><td class="num">10</td><td class="num">7</td><td class="num">44</td><td class="num">24</td><td class="num">10</td><td><span class="grade gA">A</span></td><td><span class="pill" style="--c:#059669">On track</span></td><td class="num">1332</td><td class="action">Shortlist: agree the target org, ask for a scoped issue, and set a proposal deadline.</td></tr>
+<tr><td class="who"><a href="https://github.com/pranavchoudhary-tech" target="_blank" rel="noopener">Pranav Choudhary</a><span class="login">@pranavchoudhary-tech</span><span class="role">Member</span></td><td class="num">91</td><td class="num">49</td><td class="num">22</td><td class="num">20</td><td class="num">22</td><td class="num">17</td><td class="num">22</td><td><span class="grade gA">A</span></td><td><span class="pill" style="--c:#059669">On track</span></td><td class="num">787</td><td class="action">Shortlist: agree the target org, ask for a scoped issue, and set a proposal deadline.</td></tr>
+<tr><td class="who"><a href="https://github.com/dhiraj-143r" target="_blank" rel="noopener">Dhiraj Rathod</a><span class="login">@dhiraj-143r</span><span class="role">Member</span></td><td class="num">49</td><td class="num">28</td><td class="num">6</td><td class="num">15</td><td class="num">18</td><td class="num">22</td><td class="num">12</td><td><span class="grade gA">A</span></td><td><span class="pill" style="--c:#059669">On track</span></td><td class="num">702</td><td class="action">Shortlist: agree the target org, ask for a scoped issue, and set a proposal deadline.</td></tr>
+<tr><td class="who"><a href="https://github.com/dhhhhruv" target="_blank" rel="noopener">Dhruv Mehta</a><span class="login">@dhhhhruv</span><span class="role">Member</span></td><td class="num">27</td><td class="num">20</td><td class="num">2</td><td class="num">5</td><td class="num">17</td><td class="num">2</td><td class="num">7</td><td><span class="grade gA">A</span></td><td><span class="pill" style="--c:#059669">On track</span></td><td class="num">426</td><td class="action">Shortlist: agree the target org, ask for a scoped issue, and set a proposal deadline.</td></tr>
+<tr><td class="who"><a href="https://github.com/sharmavikas18" target="_blank" rel="noopener">Vikas Sharma</a><span class="login">@sharmavikas18</span><span class="role">Member</span></td><td class="num">31</td><td class="num">16</td><td class="num">4</td><td class="num">11</td><td class="num">10</td><td class="num">10</td><td class="num">13</td><td><span class="grade gA">A</span></td><td><span class="pill" style="--c:#059669">On track</span></td><td class="num">394</td><td class="action">Shortlist: agree the target org, ask for a scoped issue, and set a proposal deadline.</td></tr>
+<tr><td class="who"><a href="https://github.com/Sahitya0805" target="_blank" rel="noopener">Sahitya Singh</a><span class="login">@Sahitya0805</span><span class="role">Community Lead</span></td><td class="num">100</td><td class="num">29</td><td class="num">23</td><td class="num">48</td><td class="num">9</td><td class="num">4</td><td class="num">28</td><td><span class="grade gA">A</span></td><td><span class="pill" style="--c:#059669">On track</span></td><td class="num">347</td><td class="action">Shortlist: agree the target org, ask for a scoped issue, and set a proposal deadline.</td></tr>
+<tr><td class="who"><a href="https://github.com/nithyarajmudhaliyar" target="_blank" rel="noopener">Nithyaraj</a><span class="login">@nithyarajmudhaliyar</span><span class="role">Member</span></td><td class="num">28</td><td class="num">18</td><td class="num">3</td><td class="num">7</td><td class="num">8</td><td class="num">8</td><td class="num">4</td><td><span class="grade gA">A</span></td><td><span class="pill" style="--c:#059669">On track</span></td><td class="num">324</td><td class="action">Shortlist: agree the target org, ask for a scoped issue, and set a proposal deadline.</td></tr>
+<tr><td class="who"><a href="https://github.com/Shristibot" target="_blank" rel="noopener">Shristi Kumari</a><span class="login">@Shristibot</span><span class="role">Member</span></td><td class="num">12</td><td class="num">6</td><td class="num">3</td><td class="num">3</td><td class="num">4</td><td class="num">0</td><td class="num">5</td><td><span class="grade gB">B</span></td><td><span class="pill" style="--c:#0284c7">Nearly there</span></td><td class="num">116</td><td class="action">Convert quality merges into GSoC-org work: pick one org and land a sustained second contribution.</td></tr>
+<tr><td class="who"><a href="https://github.com/ravisharma-09" target="_blank" rel="noopener">Ravi Sharma</a><span class="login">@ravisharma-09</span><span class="role">Member</span></td><td class="num">49</td><td class="num">31</td><td class="num">8</td><td class="num">10</td><td class="num">2</td><td class="num">2</td><td class="num">12</td><td><span class="grade gB">B</span></td><td><span class="pill" style="--c:#0284c7">Nearly there</span></td><td class="num">151</td><td class="action">Convert quality merges into GSoC-org work: pick one org and land a sustained second contribution.</td></tr>
+<tr><td class="who"><a href="https://github.com/bhavesh-210" target="_blank" rel="noopener">Bhavesh Sharma</a><span class="login">@bhavesh-210</span><span class="role">Member</span></td><td class="num">34</td><td class="num">24</td><td class="num">2</td><td class="num">8</td><td class="num">2</td><td class="num">2</td><td class="num">7</td><td><span class="grade gB">B</span></td><td><span class="pill" style="--c:#0284c7">Nearly there</span></td><td class="num">124</td><td class="action">Convert quality merges into GSoC-org work: pick one org and land a sustained second contribution.</td></tr>
+<tr><td class="who"><a href="https://github.com/ssagar1999" target="_blank" rel="noopener">Shubham Sagar</a><span class="login">@ssagar1999</span><span class="role">Member</span></td><td class="num">17</td><td class="num">11</td><td class="num">2</td><td class="num">4</td><td class="num">1</td><td class="num">0</td><td class="num">7</td><td><span class="grade gB">B</span></td><td><span class="pill" style="--c:#0284c7">Nearly there</span></td><td class="num">63</td><td class="action">Convert quality merges into GSoC-org work: pick one org and land a sustained second contribution.</td></tr>
+<tr><td class="who"><a href="https://github.com/Layyzyy" target="_blank" rel="noopener">Lay Shah</a><span class="login">@Layyzyy</span><span class="role">Event Coordinator</span></td><td class="num">14</td><td class="num">9</td><td class="num">3</td><td class="num">2</td><td class="num">1</td><td class="num">1</td><td class="num">8</td><td><span class="grade gB">B</span></td><td><span class="pill" style="--c:#0284c7">Nearly there</span></td><td class="num">73</td><td class="action">Convert quality merges into GSoC-org work: pick one org and land a sustained second contribution.</td></tr>
+<tr><td class="who"><a href="https://github.com/AryanPatel-ui" target="_blank" rel="noopener">Aryan Patel</a><span class="login">@AryanPatel-ui</span><span class="role">Member</span></td><td class="num">14</td><td class="num">8</td><td class="num">2</td><td class="num">4</td><td class="num">1</td><td class="num">0</td><td class="num">9</td><td><span class="grade gB">B</span></td><td><span class="pill" style="--c:#0284c7">Nearly there</span></td><td class="num">60</td><td class="action">Convert quality merges into GSoC-org work: pick one org and land a sustained second contribution.</td></tr>
+<tr><td class="who"><a href="https://github.com/SidharthxNST" target="_blank" rel="noopener">Sidharth</a><span class="login">@SidharthxNST</span><span class="role">Member</span></td><td class="num">17</td><td class="num">4</td><td class="num">4</td><td class="num">9</td><td class="num">1</td><td class="num">1</td><td class="num">9</td><td><span class="grade gB">B</span></td><td><span class="pill" style="--c:#0284c7">Nearly there</span></td><td class="num">68</td><td class="action">Convert quality merges into GSoC-org work: pick one org and land a sustained second contribution.</td></tr>
+<tr><td class="who"><a href="https://github.com/anant2526" target="_blank" rel="noopener">Anant Sharma</a><span class="login">@anant2526</span><span class="role">Marketing Lead</span></td><td class="num">12</td><td class="num">3</td><td class="num">4</td><td class="num">5</td><td class="num">1</td><td class="num">1</td><td class="num">8</td><td><span class="grade gB">B</span></td><td><span class="pill" style="--c:#0284c7">Nearly there</span></td><td class="num">83</td><td class="action">Convert quality merges into GSoC-org work: pick one org and land a sustained second contribution.</td></tr>
+<tr><td class="who"><a href="https://github.com/Sadiqua-Parween" target="_blank" rel="noopener">Sadiqua Parween</a><span class="login">@Sadiqua-Parween</span><span class="role">Member</span></td><td class="num">9</td><td class="num">6</td><td class="num">1</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td><span class="grade gC">C</span></td><td><span class="pill" style="--c:#d97706">Needs external signal</span></td><td class="num">24</td><td class="action">Move the next PR into a GSoC-eligible org; current merges are outside the tracked org list.</td></tr>
+<tr><td class="who"><a href="https://github.com/luvyarana" target="_blank" rel="noopener">Luvya Rana</a><span class="login">@luvyarana</span><span class="role">Tech Lead</span></td><td class="num">8</td><td class="num">5</td><td class="num">1</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">7</td><td><span class="grade gC">C</span></td><td><span class="pill" style="--c:#d97706">Needs external signal</span></td><td class="num">29</td><td class="action">Move the next PR into a GSoC-eligible org; current merges are outside the tracked org list.</td></tr>
+<tr><td class="who"><a href="https://github.com/saurabhyuvi14-ai" target="_blank" rel="noopener">Saurabh</a><span class="login">@saurabhyuvi14-ai</span><span class="role">Member</span></td><td class="num">7</td><td class="num">4</td><td class="num">1</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">4</td><td><span class="grade gC">C</span></td><td><span class="pill" style="--c:#d97706">Needs external signal</span></td><td class="num">24</td><td class="action">Move the next PR into a GSoC-eligible org; current merges are outside the tracked org list.</td></tr>
+<tr><td class="who"><a href="https://github.com/prateek6789-ai" target="_blank" rel="noopener">Prateek</a><span class="login">@prateek6789-ai</span><span class="role">Member</span></td><td class="num">3</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td><span class="grade gC">C</span></td><td><span class="pill" style="--c:#d97706">Needs external signal</span></td><td class="num">17</td><td class="action">Move the next PR into a GSoC-eligible org; current merges are outside the tracked org list.</td></tr>
+<tr><td class="who"><a href="https://github.com/AbhijitSaha-coder" target="_blank" rel="noopener">Abhijit Saha</a><span class="login">@AbhijitSaha-coder</span><span class="role">Member</span></td><td class="num">4</td><td class="num">2</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td><span class="grade gC">C</span></td><td><span class="pill" style="--c:#d97706">Needs external signal</span></td><td class="num">16</td><td class="action">Move the next PR into a GSoC-eligible org; current merges are outside the tracked org list.</td></tr>
+<tr><td class="who"><a href="https://github.com/zenowinged" target="_blank" rel="noopener">Dhruv Mehta</a><span class="login">@zenowinged</span><span class="role">General Secretary</span></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td><span class="grade gD">D</span></td><td><span class="pill" style="--c:#6b7280">No evidence</span></td><td class="num">0</td><td class="action">Confirm interest and help open a first PR in a repo that reviews contributions.</td></tr>
+<tr><td class="who"><a href="https://github.com/sujanyd" target="_blank" rel="noopener">Sujan Y D</a><span class="login">@sujanyd</span><span class="role">Member</span></td><td class="num">14</td><td class="num">0</td><td class="num">4</td><td class="num">10</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td><span class="grade gC">C</span></td><td><span class="pill" style="--c:#7c3aed">Not yet</span></td><td class="num">29</td><td class="action">Land one small PR end-to-end in a single repo before broadening.</td></tr>
+<tr><td class="who"><a href="https://github.com/unnati-jaiswal24" target="_blank" rel="noopener">Unnati Jaiswal</a><span class="login">@unnati-jaiswal24</span><span class="role">Member</span></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td><span class="grade gD">D</span></td><td><span class="pill" style="--c:#6b7280">No evidence</span></td><td class="num">0</td><td class="action">Confirm interest and help open a first PR in a repo that reviews contributions.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="hint" style="margin-top:14px">Grades: A = 5+ quality merges · B = a quality merge or
+  10+ merges · C = any merge or open PR · D = nothing yet. Handle gaps this run:
+  @zenowinged, @unnati-jaiswal24 (not indexed by GitHub, read from the site API only).</p>
+</section>
+
+</div>
+<script>
+const q = document.getElementById('q');
+const rows = [...document.querySelectorAll('#rows tr')];
+q?.addEventListener('input', () => {
+  const v = q.value.trim().toLowerCase();
+  rows.forEach(r => { r.hidden = v && !r.textContent.toLowerCase().includes(v); });
+});
+document.querySelectorAll('.leg').forEach(a => a.addEventListener('click', e => {
+  e.preventDefault();
+  q.value = a.textContent.replace(/[0-9]+$/, '').trim();
+  q.dispatchEvent(new Event('input'));
+}));
+</script>
+</body></html>
